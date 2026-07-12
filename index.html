@@ -166,3 +166,181 @@ document.getElementById("answer").innerText=Math.round(ans);
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PocketTools</title>
+
+<style>
+*{
+box-sizing:border-box;
+font-family:sans-serif;
+}
+
+body{
+margin:0;
+background:linear-gradient(135deg,#090979,#6a11cb);
+color:white;
+min-height:100vh;
+}
+
+header{
+text-align:center;
+padding:30px 20px;
+}
+
+h1{
+font-size:40px;
+}
+
+.container{
+max-width:600px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+border-radius:20px;
+padding:20px;
+margin:15px 0;
+}
+
+input,textarea,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:12px;
+border:none;
+font-size:16px;
+}
+
+button{
+cursor:pointer;
+background:white;
+color:#333;
+font-weight:bold;
+}
+
+.result{
+font-size:22px;
+margin-top:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🚀 PocketTools</h1>
+<p>無料・登録不要の便利ツール</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>📝 文字数カウンター</h2>
+
+<textarea id="text"
+placeholder="文章を入力"
+oninput="countText()"></textarea>
+
+<div class="result">
+文字数：<span id="count">0</span>
+</div>
+</div>
+
+
+<div class="card">
+
+<h2>🔐 パスワード生成</h2>
+
+<button onclick="makePassword()">
+作成する
+</button>
+
+<div class="result" id="password">
+-
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>💰 割引計算</h2>
+
+<input id="price"
+type="number"
+placeholder="価格">
+
+<input id="discount"
+type="number"
+placeholder="割引率(%)">
+
+<button onclick="discountCalc()">
+計算
+</button>
+
+<div class="result">
+<span id="answer">0</span>円
+</div>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+function countText(){
+
+let text=document.getElementById("text").value;
+
+document.getElementById("count").innerText=text.length;
+
+}
+
+
+function makePassword(){
+
+let chars=
+"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%";
+
+let result="";
+
+for(let i=0;i<12;i++){
+
+result+=chars[Math.floor(Math.random()*chars.length)];
+
+}
+
+document.getElementById("password").innerText=result;
+
+}
+
+
+function discountCalc(){
+
+let price=
+Number(document.getElementById("price").value);
+
+let discount=
+Number(document.getElementById("discount").value);
+
+let result=
+price-(price*discount/100);
+
+document.getElementById("answer").innerText=Math.round(result);
+
+}
+
+</script>
+
+</body>
+</html>

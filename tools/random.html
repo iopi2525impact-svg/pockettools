@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ランダム抽選 - PocketTools</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>🎲 ランダム抽選</h1>
+
+<p>
+選択肢からランダムで決定
+</p>
+
+</header>
+
+
+
+<main>
+
+<div class="card">
+
+
+<h2>
+選択肢を入力
+</h2>
+
+
+<p>
+※カンマ（,）で区切ってください
+</p>
+
+
+<input
+id="items"
+placeholder="例：赤,青,緑"
+style="
+width:100%;
+padding:12px;
+border-radius:10px;
+">
+
+
+
+<button
+onclick="draw()"
+style="
+width:100%;
+padding:15px;
+margin-top:15px;
+border-radius:15px;
+border:none;
+">
+
+抽選する
+
+</button>
+
+
+
+<h2 id="result">
+
+結果
+
+</h2>
+
+
+
+<a href="../index.html" class="card">
+
+🏠 ホームへ戻る
+
+</a>
+
+
+</div>
+
+
+</main>
+
+
+
+<script>
+
+
+function draw(){
+
+
+let input =
+document.getElementById("items").value;
+
+
+
+let list =
+input.split(",");
+
+
+
+let result =
+list[Math.floor(Math.random()*list.length)];
+
+
+
+document.getElementById("result")
+.innerText =
+"🎉 "+result;
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>電卓 - PocketTools</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>🧮 電卓</h1>
+
+<p>
+簡単な計算をすぐに
+</p>
+
+</header>
+
+
+
+<main>
+
+
+<div class="card">
+
+
+<input
+id="display"
+readonly
+style="
+width:100%;
+padding:15px;
+font-size:25px;
+border-radius:15px;
+">
+
+
+
+<div style="
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+margin-top:15px;
+">
+
+
+<button onclick="add('7')">7</button>
+<button onclick="add('8')">8</button>
+<button onclick="add('9')">9</button>
+<button onclick="add('/')">÷</button>
+
+
+<button onclick="add('4')">4</button>
+<button onclick="add('5')">5</button>
+<button onclick="add('6')">6</button>
+<button onclick="add('*')">×</button>
+
+
+<button onclick="add('1')">1</button>
+<button onclick="add('2')">2</button>
+<button onclick="add('3')">3</button>
+<button onclick="add('-')">−</button>
+
+
+<button onclick="add('0')">0</button>
+<button onclick="clearDisplay()">C</button>
+<button onclick="calc()">=</button>
+<button onclick="add('+')">＋</button>
+
+
+</div>
+
+
+<br>
+
+
+<a href="../index.html" class="card">
+
+🏠 ホームへ戻る
+
+</a>
+
+
+</div>
+
+
+</main>
+
+
+
+<script>
+
+
+let display =
+document.getElementById("display");
+
+
+
+function add(value){
+
+display.value += value;
+
+}
+
+
+
+function clearDisplay(){
+
+display.value="";
+
+}
+
+
+
+function calc(){
+
+try{
+
+display.value =
+eval(display.value);
+
+}
+
+catch{
+
+display.value="エラー";
+
+}
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>

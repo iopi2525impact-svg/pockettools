@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>タイマー - PocketTools</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>⏱️ タイマー</h1>
+
+<p>
+時間管理をサポート
+</p>
+
+</header>
+
+
+
+<main>
+
+
+<div class="card">
+
+
+<input
+id="seconds"
+type="number"
+placeholder="秒数を入力"
+style="
+width:100%;
+padding:12px;
+border-radius:10px;
+">
+
+
+
+<button
+onclick="startTimer()"
+style="
+width:100%;
+padding:15px;
+margin-top:15px;
+border-radius:15px;
+border:none;
+">
+
+スタート
+
+</button>
+
+
+
+<h2>
+
+残り：
+<span id="time">
+0
+</span>
+秒
+
+</h2>
+
+
+
+<a href="../index.html" class="card">
+
+🏠 ホームへ戻る
+
+</a>
+
+
+</div>
+
+
+</main>
+
+
+
+<script>
+
+
+let timer;
+
+
+
+function startTimer(){
+
+
+clearInterval(timer);
+
+
+
+let seconds =
+Number(document.getElementById("seconds").value);
+
+
+
+document.getElementById("time")
+.innerText = seconds;
+
+
+
+timer =
+setInterval(()=>{
+
+
+seconds--;
+
+
+document.getElementById("time")
+.innerText = seconds;
+
+
+
+if(seconds <= 0){
+
+
+clearInterval(timer);
+
+alert("時間になりました！");
+
+
+}
+
+
+},1000);
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>

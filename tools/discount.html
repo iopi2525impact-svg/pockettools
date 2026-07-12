@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>割引計算 - PocketTools</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>💰 割引計算</h1>
+
+<p>
+割引後の価格を計算
+</p>
+
+</header>
+
+
+
+<main>
+
+
+<div class="card">
+
+
+<h2>元の価格</h2>
+
+<input
+id="price"
+type="number"
+placeholder="例：5000"
+style="
+width:100%;
+padding:12px;
+border-radius:10px;
+">
+
+
+
+<h2>割引率（%）</h2>
+
+<input
+id="discount"
+type="number"
+placeholder="例：20"
+style="
+width:100%;
+padding:12px;
+border-radius:10px;
+">
+
+
+
+<button
+onclick="calculateDiscount()"
+style="
+width:100%;
+padding:15px;
+margin-top:15px;
+border-radius:15px;
+border:none;
+cursor:pointer;
+">
+
+計算する
+
+</button>
+
+
+
+<h2>
+結果：
+<span id="result">
+0
+</span>
+円
+</h2>
+
+
+
+<a href="../index.html" class="card">
+
+🏠 ホームへ戻る
+
+</a>
+
+
+</div>
+
+
+</main>
+
+
+
+<script>
+
+
+function calculateDiscount(){
+
+
+let price =
+Number(document.getElementById("price").value);
+
+
+
+let discount =
+Number(document.getElementById("discount").value);
+
+
+
+let result =
+price - (price * discount / 100);
+
+
+
+document.getElementById("result")
+.innerText =
+Math.round(result);
+
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

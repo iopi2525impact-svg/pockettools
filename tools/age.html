@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>年齢計算 - PocketTools</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>📅 年齢計算</h1>
+
+<p>
+誕生日から年齢を計算
+</p>
+
+</header>
+
+
+
+<main>
+
+
+<div class="card">
+
+
+<h2>
+誕生日
+</h2>
+
+
+<input
+id="birthday"
+type="date"
+style="
+width:100%;
+padding:12px;
+border-radius:10px;
+">
+
+
+
+<button
+onclick="calculateAge()"
+style="
+width:100%;
+padding:15px;
+margin-top:15px;
+border-radius:15px;
+border:none;
+">
+
+計算する
+
+</button>
+
+
+
+<h2>
+あなたは
+<span id="age">
+0
+</span>
+歳
+
+</h2>
+
+
+
+<a href="../index.html" class="card">
+
+🏠 ホームへ戻る
+
+</a>
+
+
+</div>
+
+
+</main>
+
+
+
+<script>
+
+
+function calculateAge(){
+
+
+let birth =
+new Date(
+document.getElementById("birthday").value
+);
+
+
+
+let today =
+new Date();
+
+
+
+let age =
+today.getFullYear()
+-
+birth.getFullYear();
+
+
+
+let month =
+today.getMonth()
+-
+birth.getMonth();
+
+
+
+if(month < 0 ||
+(month === 0 &&
+today.getDate() < birth.getDate())){
+
+age--;
+
+}
+
+
+
+document.getElementById("age")
+.innerText = age;
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

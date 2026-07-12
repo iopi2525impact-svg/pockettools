@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>文字数カウンター - PocketTools</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>📝 文字数カウンター</h1>
+
+<p>
+文章の文字数を簡単に確認
+</p>
+
+</header>
+
+
+
+<main>
+
+
+<div class="card">
+
+
+<textarea
+id="text"
+placeholder="ここに文章を入力してください"
+style="
+width:100%;
+height:200px;
+border-radius:15px;
+padding:15px;
+font-size:16px;
+">
+</textarea>
+
+
+
+<h2>
+文字数：
+<span id="count">
+0
+</span>
+</h2>
+
+
+
+<a href="../index.html" class="card">
+
+🏠 ホームへ戻る
+
+</a>
+
+
+</div>
+
+
+</main>
+
+
+
+<script>
+
+const text =
+document.getElementById("text");
+
+
+const count =
+document.getElementById("count");
+
+
+
+text.addEventListener("input",()=>{
+
+count.innerText =
+text.value.length;
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
